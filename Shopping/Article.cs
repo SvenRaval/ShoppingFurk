@@ -32,10 +32,8 @@
             }
             set
             {
-                if(checkDescription(value))
-                {
-                    _description = value;
-                }
+                CheckDescription(value);
+                _description = value;
             }
         }
 
@@ -49,7 +47,33 @@
         #endregion public methods
 
         #region private methods
+        private bool CheckDescription(string descriptionToCheck)
+        {
+            char[] specialChars = { '!', '*', '+', '/' };
+            bool find = false;
+            foreach (char specialChar in specialChars)
+            {
+                if (descriptionToCheck.Contains(specialChar))
+                {
+                    find = true;
+                }
+            }
+            if (find)
+            {
+                throw new SpecialCharInDescriptionException();
+            }
 
+            if (descriptionToCheck.Split(' ').Length == 1)
+            {
+                throw new TooShortDescriptionException();
+            }
+
+            if(descriptionToCheck.Length > 50)
+            {
+                throw new TooLongDescriptionException();
+            }
+            return true;
+        }
         #endregion private methods
 
         public class ArticleException : Exception { }
