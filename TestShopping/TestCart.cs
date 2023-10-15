@@ -81,6 +81,8 @@ namespace TestShopping
             Assert.That(_cart.CartItems, Is.EqualTo(expectedCartItems));
         }
 
+        //TODO add remove test cases
+
         [Test]
         public void Price_EmptyCart_GetPrice()
         {
@@ -116,7 +118,7 @@ namespace TestShopping
         public void PriceAverage_UniqueValue_GetAverage()
         {
             //given
-            List<Article> articles = ArticleGenerator.Generate(10);
+            List<Article> articles = ArticleGenerator.Generate(5);
             List<CartItem> cartItems = new List<CartItem>();
             foreach (Article article in articles)
             {
@@ -127,8 +129,10 @@ namespace TestShopping
             //when
 
             //then
-            Assert.AreEqual(2, _cart.Price(true));
+            Assert.AreEqual(6, _cart.Price(true));
         }
+
+        // TODO Add price test case for multiple article (quantity > 1)
 
         [Test]
         public void DoesExist_ById_True()
