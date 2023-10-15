@@ -32,9 +32,9 @@ namespace TestShopping
             //Event will be triggered by constructor
 
             //then
-            Assert.AreEqual(_id, _article.Id);
-            Assert.AreEqual(_description, _article.Description);
-            Assert.AreEqual(_price, _article.Price);
+            Assert.That(_article.Id, Is.EqualTo(_id));
+            Assert.That(_article.Description, Is.EqualTo(_description));
+            Assert.That(_article.Price, Is.EqualTo(_price));
         }
 
         #region Description
@@ -55,7 +55,7 @@ namespace TestShopping
             _article.Description = expectedDescription;
 
             //then
-            Assert.AreEqual(expectedDescription, _article.Description);
+            Assert.That(_article.Description, Is.EqualTo(expectedDescription));
         }
 
         [Test]
@@ -68,7 +68,7 @@ namespace TestShopping
             _article.Description = expectedDescription;
 
             //then
-            Assert.AreEqual(expectedDescription, _article.Description);
+            Assert.That(_article.Description, Is.EqualTo(expectedDescription));
         }
 
         [Test]
