@@ -42,7 +42,7 @@ namespace TestShopping
             //refer to Setup
             int expectedArticlesQuantity = 2;
             List<Article> expectedArticles = ArticleGenerator.Generate(expectedArticlesQuantity);
-            
+
             int expectedQuantity1 = 1;
             CartItem expectedCartItem1 = new CartItem(expectedArticles[0], expectedQuantity1);
 
@@ -101,7 +101,7 @@ namespace TestShopping
             //given
             List<Article> articles = ArticleGenerator.Generate(5);
             List<CartItem> cartItems = new List<CartItem>();
-            foreach(Article article in articles)
+            foreach (Article article in articles)
             {
                 cartItems.Add(new CartItem(article, 1));
             }
@@ -129,7 +129,7 @@ namespace TestShopping
             //when
 
             //then
-            Assert.AreEqual(6, _cart.Price(true));
+            Assert.That(_cart.Price(true), Is.EqualTo(6));
         }
 
         // TODO Add price test case for multiple article (quantity > 1)
@@ -185,7 +185,7 @@ namespace TestShopping
             //when
 
             //then
-            Assert.AreEqual(1, _cart.Cheapest());
+            Assert.That(_cart.Cheapest(), Is.EqualTo(1));
         }
 
         [Test]
@@ -203,7 +203,7 @@ namespace TestShopping
             //when
 
             //then
-            Assert.AreEqual(10, _cart.MostExpensive());
+            Assert.That(_cart.MostExpensive(), Is.EqualTo(10));
         }
     }
 }
