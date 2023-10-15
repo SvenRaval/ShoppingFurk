@@ -13,7 +13,8 @@ Ce petit projet permet l'entrainement à la POO ainsi qu'au développement orien
 Après avoir "clone" le dépôt sur la branche main, vous pouvez tenter une première compilation qui devrait vous donner ce résultat:
 
 [INPUT]
-Menu : Build->Build Solution
+
+Menu: Build->Build Solution
 
 [OUTPUT]
 ```
@@ -27,9 +28,11 @@ Pour afficher l'explorateur de test:
 MENU : Test-> Test Explorer
 
 [INPUT]
+
 ![image](https://github.com/CPNV-226a/Shopping/assets/5616312/4d05053e-f261-41a3-b445-f6d79bf80eb1)
 
 [OUTPUT]
+
 ![image](https://github.com/CPNV-226a/Shopping/assets/5616312/182d2ce6-f4aa-465a-be9c-0215d458ee7c)
 
 Vous obtenez tous les tests en échecs présentant le même message d'erreur:
@@ -42,11 +45,11 @@ Cela prouve que votre projet se compile et que les tests sont opérationnels.
 Le dépôt est constitué de 4 branches:
 
 ```
---main
---develop
---feature/Cart
---feature/CartItem
---feature/Article
+--main                  //état de départ, mais il est préférable de partir sur develop
+--develop               //état de départ, la branche de base pour débuter votre entrainement
+--feature/Cart          //la solution pour Cart (intégrant aussi bien CartItem que Article)
+--feature/CartItem      //la solution pour CartItem (intégrant aussi Article)
+--feature/Article       //la solution pour Article
 ```
 Le contenu de main est identique à develop. Vous pouvez débuter l'entrainement sur l'une ou l'autre, même si les bonnes pratiques nous poussent à utiliser *develop*.
 
@@ -56,9 +59,9 @@ git switch develop
 ```
 Les fonctionnalités doivent être réalisées dans ce sens :
 
+```
 Article->CartItem->Cart
-
-Les branches contiennent le résultat attendu.
+```
 
 Soit vous utilisez git pour passer d'une branche à l'autre, soit vous pouvez vous aider de Github pour aller voir le contenu:
 
@@ -71,4 +74,4 @@ Soit vous utilisez git pour passer d'une branche à l'autre, soit vous pouvez vo
 * [Ouvrir une issue](https://github.com/CPNV-226a/Shopping/issues)
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[LICENCE](./LICENCE)
