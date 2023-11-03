@@ -47,20 +47,18 @@
         #endregion public methods
 
         #region private methods
-
         private bool CheckDescription(string descriptionToCheck)
         {
-            char[]  specialCharacters = { '!', '*', '+', '/' };
+            char[] specialChars = { '!', '*', '+', '/' };
             bool find = false;
-
-            foreach (char specialChar in specialCharacters)
+            foreach (char specialChar in specialChars)
             {
                 if (descriptionToCheck.Contains(specialChar))
                 {
                     find = true;
                 }
             }
-            if (find == true)
+            if (find)
             {
                 throw new SpecialCharInDescriptionException();
             }
@@ -69,15 +67,15 @@
             {
                 throw new TooShortDescriptionException();
             }
-            
-            if (descriptionToCheck.Length >50)
+
+            if(descriptionToCheck.Length > 50)
             {
                 throw new TooLongDescriptionException();
             }
             return true;
         }
-
         #endregion private methods
+
         public class ArticleException : Exception { }
         public class TooShortDescriptionException : ArticleException { }
         public class SpecialCharInDescriptionException : ArticleException { }
